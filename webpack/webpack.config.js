@@ -1,6 +1,7 @@
-const { merge } = require('webpack-merge')
-const commonConfig = require('./webpack.common.js')
+import { merge } from 'webpack-merge'
+import commonConfig from './webpack.common.js'
 
-module.exports = ({env}) => {
+export default ({ env }) => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   return merge(commonConfig, require(`./webpack.${env}.js`))
 }
